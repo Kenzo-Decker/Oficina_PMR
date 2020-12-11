@@ -5,6 +5,14 @@ module.exports = {
   presets: [],
   darkMode: false, // or 'media' or 'class'
   theme: {
+    extend: {
+      colors: {
+        azul: {
+          DEFAULT: 'var(--azul-normal)',
+          dark: 'var(--azul-escuro)',
+        },
+      },
+    },
     screens: {
       sm: '640px',
       md: '768px',
@@ -82,6 +90,7 @@ module.exports = {
       'gradient-to-bl': 'linear-gradient(to bottom left, var(--tw-gradient-stops))',
       'gradient-to-l': 'linear-gradient(to left, var(--tw-gradient-stops))',
       'gradient-to-tl': 'linear-gradient(to top left, var(--tw-gradient-stops))',
+      'oficina-pmr': "url('/packs/media/img/oficina-6a10621f.png')",
     },
     backgroundOpacity: (theme) => theme('opacity'),
     backgroundPosition: {

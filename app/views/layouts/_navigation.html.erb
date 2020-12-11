@@ -1,0 +1,63 @@
+<div class="flex flex-col bg-home bg-opacity-20 max-h-full z-10">
+
+    <!-- Dummy box -->
+    <div class="box"></div>
+
+    <nav class="fixed w-full bg-white md:bg-transparent transition ease-linear duration-300" id="nav">
+        <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-20">
+        <div class="flex items-center justify-between h-16">
+            <div class="flex items-center">
+                <!-- Logo -->
+            <div class="flex-shrink-0 h-14 py-3">
+                <a href="javascript: void(0);" class="hidden md:block transition ease-linear duration-300" id="logo-white">
+                    <%= image_pack_tag 'media/img/usp-branco.png', size: '250x45', alt: 'USP-logo' %>
+                </a>
+                <a href="javascript: void(0);" class="md:hidden transition ease-linear duration-300" id="logo-black">
+                    <%= image_pack_tag 'media/img/usp-preto.png', size: '250x45', alt: 'USP-logo' %>
+                </a>
+            </div>
+            </div>
+            <div class="hidden md:block">
+                <!-- Non-mobile login button -->
+            <div class="ml-4 flex items-center md:ml-6 transition ease-linear duration-300 boxShadow">
+                <button class="bg-amarelo py-2 px-4 rounded-md text-white hover:text-white focus:outline-none">
+                    <a href="login.html.erb" class="object-cover font-medium">Acessar</a>
+                </button>
+            </div>
+            </div>
+        </div>
+        </div>
+    </nav>
+
+    <div class="fixed my-16 w-full bg-yellow-500 flex items-center md:hidden shadow-md transition ease-linear duration-500">
+        <!-- Mobile login button -->
+        <button class="flex-grow px-8 rounded-md text-white hover:text-white focus:outline-none">
+            <a href="login.html.erb" class="object-cover font-medium">Acessar</a>
+        </button>
+    </div>
+
+</div>
+
+<script type="text/javascript">
+       
+    var logo_w = document.getElementById('logo-white')
+    var logo_b = document.getElementById('logo-black')
+    var nav = document.getElementById('nav');
+    var sticky = nav.offsetTop;
+    var width = window.innerWidth;
+
+    window.onscroll = function(){
+        if (window.pageYOffset > sticky) {
+            nav.classList.add('scroll')
+            nav.classList.remove('md:bg-transparent')
+            logo_w.classList.remove('md:block');
+            logo_b.classList.remove('md:hidden');
+        }
+        else {
+            nav.classList.remove('scroll')
+            nav.classList.add('md:bg-transparent')
+            logo_w.classList.add('md:block');
+            logo_b.classList.add('md:hidden');
+    }
+}
+</script>
