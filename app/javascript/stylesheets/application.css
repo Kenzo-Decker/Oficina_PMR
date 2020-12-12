@@ -2,7 +2,8 @@
     --azul-normal: #64C4D2;
     --azul-escuro: #1094AB;
     --cinza-claro: #9F9F9F;
-    --amarelo: #E99100;
+    --amarelo: #FDAF2D;
+    --amarelo-escuro: #E99100;
 }
 
 @tailwind base;
@@ -22,6 +23,10 @@
 
 .bg-amarelo {
     background-color: var(--amarelo);
+}
+
+.bg-amarelo-escuro {
+    background-color: var(--amarelo-escuro);
 }
 
 .bg-azul {
@@ -52,6 +57,10 @@
     color: var(--azul-escuro);
 }
 
+.branco {
+    color: white;
+}
+
 .icon-shadow {
     filter:drop-shadow(2px 6px 1px rgb(0, 0, 0))
 }
@@ -79,6 +88,6 @@
 .divider {
     border-left: 1px solid #505050;
     border-right: 1px solid #292929;
-    height: 170px;
+    height: 160px;
     position: relative;
 }
