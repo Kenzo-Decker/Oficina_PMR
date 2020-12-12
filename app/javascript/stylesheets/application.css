@@ -1,0 +1,84 @@
+:root {
+    --azul-normal: #64C4D2;
+    --azul-escuro: #1094AB;
+    --cinza-claro: #9F9F9F;
+    --amarelo: #E99100;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.bg-home {
+    width: 100%;
+    height: 100%;
+    background-image: url('/packs/media/img/oficina-hd-62db1dcb.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-attachment: fixed;
+    position: relative;
+}
+
+.bg-amarelo {
+    background-color: var(--amarelo);
+}
+
+.bg-azul {
+    background-color: var(--azul-normal);
+}
+
+.bg-azul-escuro {
+    background-color: var(--azul-escuro);
+}
+
+.bg-cinza {
+    background-color: var(--cinza-claro);
+}
+
+.verde {
+    color: rgb(58, 189, 58);
+}
+
+.laranja {
+    color: rgb(212, 144, 16);
+}
+
+.vermelho {
+    color: rgb(168, 36, 36);
+}
+
+.azul-escuro {
+    color: var(--azul-escuro);
+}
+
+.icon-shadow {
+    filter:drop-shadow(2px 6px 1px rgb(0, 0, 0))
+}
+
+.flex-grow-1 {
+    flex-grow: 1;
+}
+
+.flex-grow-3 {
+    flex-grow: 3;
+}
+
+.box {
+    width: 100%;
+    /* padding: 150px 0px 200px 0px; */
+    height: 70vh;
+    background-color: transparent;
+}
+
+.scroll {
+    background-color: #ffffff;
+    box-shadow: 0px 2px 2px var(--cinza-claro);
+}
+
+.divider {
+    border-left: 1px solid #505050;
+    border-right: 1px solid #292929;
+    height: 170px;
+    position: relative;
+}
