@@ -2,7 +2,8 @@
     --azul-normal: #64C4D2;
     --azul-escuro: #1094AB;
     --cinza-claro: #9F9F9F;
-    --amarelo: #E99100;
+    --amarelo: #FDAF2D;
+    --amarelo-escuro: #E99100;
 }
 
 @tailwind base;
@@ -22,6 +23,10 @@
 
 .bg-amarelo {
     background-color: var(--amarelo);
+}
+
+.bg-amarelo-escuro {
+    background-color: var(--amarelo-escuro);
 }
 
 .bg-azul {
@@ -50,6 +55,10 @@
 
 .azul-escuro {
     color: var(--azul-escuro);
+}
+
+.branco {
+    color: white;
 }
 
 .icon-shadow {

@@ -1,14 +1,15 @@
-<!-- <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" data-auto-replace-svg="nest"></script> -->
-
 <!-- Icones de status -->
 <div class="w-full bg-cinza py-2 flex flex-col justify-center items-center" x-data='{ open: false }'>
-    <button class="bg-amarelo py-2 px-4 rounded mb-4 shadow-md flex flex-row items-center" @click='open = true'>
-        <i class="hidden fas fa-redo-alt fa-lg mr-2"></i>
-        <p class="text-white">Consultar status</p>
+    <!-- Botão de consulta e atualização de status -->
+    <button class="bg-amarelo py-2 px-4 rounded-md mb-4 shadow-md flex flex-row items-center focus:outline-none transition ease-linear
+    duration-300 bg-amarelo-escuro hover:bg-yellow-500 transform hover:scale-105" id="botao-status" @click='open = true'>
+        <i class="hidden branco fas fa-redo-alt fa-lg mr-2"></i>
+        <p class="text-white font-semibold">Consultar status</p>
     </button>
+    <!-- Instruções para consulta -->
     <p class="text-white text-base md:text-lg text-center" x-show='!open'>Para consultar o status das máquinas da Oficina PMR, clique no botão acima</p>
     <div class="w-full flex flex-row flex-wrap md:flex-nowrap items-start px-7" x-show='open'>
-        <!-- Tornos -->
+        <!-- Ícones dos tornos -->
         <div class="flex-1 px-2 text-center" id="maquina1">
             <p class="text-white text-base md:text-lg py-2">Torno 1</p>
             <i class="fas fa-user-clock fa-4x laranja icon-shadow"></i>
@@ -30,7 +31,7 @@
             <p class="text-black text-sm md:text-base py-1"></p>
         </div>
         <div class="divider"></div>
-        <!-- Fresas -->
+        <!-- Ícones das fresas -->
         <div class="flex-1 px-2 text-center" id="maquina5">
             <p class="text-white text-base md:text-lg py-2">Fresa 1</p>
             <i class="fas fa-check fa-4x verde icon-shadow"></i>
@@ -53,55 +54,53 @@
 <!-- Logica icones de status -->
 <script>
 
-    // VALORES TESTE
-    const status = ['disp', 'disp', 'ocup', 'disp', 'manut', 'disp', 'ocup'];
+// VALORES TESTE
+const status = ['disp', 'disp', 'ocup', 'disp', 'manut', 'disp', 'ocup'];
 
-    // VALORES DO BD 
-    // var status_torno1 = Puxar do bd
+// INCLUIR ANIMACAO DO ICONE ENQUANTO STATUS SAO COLETADOS DO BD
 
-    document.addEventListener('DOMContentLoaded', function () {
-        $('button').on('click', function () {
-            $(this)
-                .find('[data-fa-i2svg]')
-                .removeClass('hidden')
-                .addClass('white')
-                .parent().children()[1].textContent = 'Atualizar status';
-            for (const [index,st] of status.entries()) {
-                const maquina_id = '#maquina' + (index+1);
-                console.log(maquina_id);
-                // const maquina_id = '#maquina1';
-                if (st == 'disp') {
-                // if (true) {
-                    $(maquina_id)
-                        .find('[data-fa-i2svg]')
-                        .removeClass('fa-wrench vermelho')
-                        .removeClass('fa-user-clock laranja')
-                        .addClass('fa-check verde')
-                        .parent().children()[2].textContent = 'Disponível';
-                }
-                else if (st == 'ocup') {
-                // else if (st == 'ocup') {
-                    $(maquina_id)
-                        .find('[data-fa-i2svg]')
-                        .removeClass('fa-wrench vermelho')
-                        .addClass('fa-user-clock laranja')
-                        .removeClass('fa-check verde')
-                        .parent().children()[2].textContent = 'Ocupado';
-                }
-                else {
-                    $(maquina_id)
-                        .find('[data-fa-i2svg]')
-                        .addClass('fa-wrench vermelho')
-                        .removeClass('fa-user-clock laranja')
-                        .removeClass('fa-check verde')
-                        .parent().children()[2].textContent = 'Em manutenção';
-                }
-        }});
-    });
+document.addEventListener('DOMContentLoaded', function () {
+    $('#botao-status').on('click', function () {
+        // Trocar instruções por ícones de status 
+        $(this)
+            .find('[data-fa-i2svg]')
+            .removeClass('hidden')
+            .parent().children()[1].textContent = 'Atualizar status';
+        // Varrer array de status
+        for (const [index,st] of status.entries()) {
+            // Extrair status e número da máquina
+            const maquina_id = '#maquina' + (index+1);
+            // Atualizar ícones e descrição
+            if (st == 'disp') {
+                $(maquina_id)
+                    .find('[data-fa-i2svg]')
+                    .removeClass('fa-wrench vermelho')
+                    .removeClass('fa-user-clock laranja')
+                    .addClass('fa-check verde')
+                    .parent().children()[2].textContent = 'Disponível';
+            }
+            else if (st == 'ocup') {
+                $(maquina_id)
+                    .find('[data-fa-i2svg]')
+                    .removeClass('fa-wrench vermelho')
+                    .addClass('fa-user-clock laranja')
+                    .removeClass('fa-check verde')
+                    .parent().children()[2].textContent = 'Ocupado';
+            }
+            else {
+                $(maquina_id)
+                    .find('[data-fa-i2svg]')
+                    .addClass('fa-wrench vermelho')
+                    .removeClass('fa-user-clock laranja')
+                    .removeClass('fa-check verde')
+                    .parent().children()[2].textContent = 'Em manutenção';
+            }
+    }});
+});
 </script>
 
 <!-- Sobre a oficina -->
-<section class="bg-white flex flex-col justify-center items-center max-w-xl mx-auto">
+<section class="bg-white flex flex-col justify-center items-center max-w-xl xl:max-w-3xl mx-auto">
     <ul class="list-none py-14">
         <li class="text-lg md:text-xl text-black font-semibold">SOBRE</li>
         <li class="text-4xl md:text-5xl azul-escuro font-semibold">OFICINA PMR</li>
