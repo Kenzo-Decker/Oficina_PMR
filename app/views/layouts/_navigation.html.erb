@@ -1,6 +1,5 @@
 <div class="flex flex-col bg-home bg-opacity-20 max-h-full z-10">
 
-    <!-- Dummy box -->
     <div class="box"></div>
 
     <nav class="fixed w-full bg-white md:bg-transparent transition ease-linear duration-300" id="nav">
@@ -19,9 +18,12 @@
             </div>
             <div class="hidden md:block">
                 <!-- Non-mobile login button -->
-            <div class="ml-4 flex items-center md:ml-6 transition ease-linear duration-300 boxShadow">
+            <div class="ml-4 flex flex-col items-center md:ml-6 transition ease-linear duration-300 boxShadow">
                 <button class="bg-amarelo py-2 px-4 rounded-md text-white hover:text-white focus:outline-none">
-                    <a href="login.html.erb" class="object-cover font-medium">Acessar</a>
+                    <a href="login.html.erb" class="object-cover font-medium">
+                        <i class="fas fa-sign-in-alt fa-sm white"></i>
+                        Acessar
+                    </a>
                 </button>
             </div>
             </div>
@@ -31,12 +33,24 @@
 
     <div class="fixed my-16 w-full bg-yellow-500 flex items-center md:hidden shadow-md transition ease-linear duration-500">
         <!-- Mobile login button -->
-        <button class="flex-grow px-8 rounded-md text-white hover:text-white focus:outline-none">
-            <a href="login.html.erb" class="object-cover font-medium">Acessar</a>
+        <button class="flex-grow py-0.5 px-8 rounded-md text-white hover:text-white focus:outline-none">
+            <a href="login.html.erb" class="object-cover font-medium">
+                <i class="fas fa-sign-in-alt fa-sm white"></i>
+                Acessar
+            </a>
         </button>
     </div>
 
 </div>
+
+<!-- <div class="box">
+    <div class="text-4xl shadow-xl text-white">
+        
+    </div>
+    <div class="bg-white bg-opacity-50">
+
+    </div>
+</div> -->
 
 <script type="text/javascript">
        
@@ -48,14 +62,14 @@
 
     window.onscroll = function(){
         if (window.pageYOffset > sticky) {
-            nav.classList.add('scroll')
-            nav.classList.remove('md:bg-transparent')
+            nav.classList.add('scroll');
+            nav.classList.remove('md:bg-transparent');
             logo_w.classList.remove('md:block');
             logo_b.classList.remove('md:hidden');
         }
         else {
-            nav.classList.remove('scroll')
-            nav.classList.add('md:bg-transparent')
+            nav.classList.remove('scroll');
+            nav.classList.add('md:bg-transparent');
             logo_w.classList.add('md:block');
             logo_b.classList.add('md:hidden');
     }
