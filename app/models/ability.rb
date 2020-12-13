@@ -20,7 +20,7 @@ class Ability
 
     else 
       can :read, :all
-      #can :create, forms(inserir nome de formulario)
+      can :create, :formulario_certo, :reservas_certo
   end
     #
     # The first argument to `can` is the action you are giving the user

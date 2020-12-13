@@ -1,0 +1,47 @@
+<%= form_with(model: reservas_certo, local: true) do |form| %>
+  <% if reservas_certo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(reservas_certo.errors.count, "error") %> prohibited this reservas_certo from being saved:</h2>
+
+      <ul>
+        <% reservas_certo.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :fields %>
+    <%= form.text_field :fields %>
+  </div>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.text_field :user_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :formulario_id %>
+    <%= form.number_field :formulario_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :maquina_id %>
+    <%= form.number_field :maquina_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tecnico %>
+    <%= form.check_box :tecnico %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ativa %>
+    <%= form.check_box :ativa %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

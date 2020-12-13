@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Fields:</strong>
+  <%= @reservas_certo.fields %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @reservas_certo.user_id %>
+</p>
+
+<p>
+  <strong>Formulario:</strong>
+  <%= @reservas_certo.formulario_id %>
+</p>
+
+<p>
+  <strong>Maquina:</strong>
+  <%= @reservas_certo.maquina_id %>
+</p>
+
+<p>
+  <strong>Tecnico:</strong>
+  <%= @reservas_certo.tecnico %>
+</p>
+
+<p>
+  <strong>Ativa:</strong>
+  <%= @reservas_certo.ativa %>
+</p>
+
+<%= link_to 'Edit', edit_reservas_certo_path(@reservas_certo) %> |
+<%= link_to 'Back', reservas_certos_path %>

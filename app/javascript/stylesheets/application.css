@@ -31,6 +31,14 @@
     }
 }
 
+.text-amarelo{
+    color: var(--amarelo)
+}
+
+.text-amarelo-escuro{
+    color: var(--amarelo-escuro);
+}
+
 .bg-home {
     width: 100%;
     height: 100%;
