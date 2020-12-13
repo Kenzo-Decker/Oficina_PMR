@@ -1,0 +1,77 @@
+<%= form_with(model: formulario_certo, local: true) do |form| %>
+  <% if formulario_certo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(formulario_certo.errors.count, "error") %> prohibited this formulario_certo from being saved:</h2>
+
+      <ul>
+        <% formulario_certo.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :data %>
+    <%= form.text_field :data %>
+  </div>
+
+  <div class="field">
+    <%= form.label :20 %>
+    <%= form.text_field :20 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :departamento %>
+    <%= form.text_field :departamento %>
+  </div>
+
+  <div class="field">
+    <%= form.label :20 %>
+    <%= form.text_field :20 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :nome_projeto %>
+    <%= form.text_field :nome_projeto %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tipo_projeto_string %>
+    <%= form.text_field :tipo_projeto_string %>
+  </div>
+
+  <div class="field">
+    <%= form.label :orientador %>
+    <%= form.text_field :orientador %>
+  </div>
+
+  <div class="field">
+    <%= form.label :maquina %>
+    <%= form.number_field :maquina %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ferramentas_proprias %>
+    <%= form.text_field :ferramentas_proprias %>
+  </div>
+
+  <div class="field">
+    <%= form.label :estado %>
+    <%= form.text_field :estado %>
+  </div>
+
+  <div class="field">
+    <%= form.label :material %>
+    <%= form.text_field :material %>
+  </div>
+
+  <div class="field">
+    <%= form.label :desenho_peca %>
+    <%= form.text_field :desenho_peca %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

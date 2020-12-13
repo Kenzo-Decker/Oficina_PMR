@@ -1,0 +1,2 @@
+class FormularioCerto < ApplicationRecord
+end

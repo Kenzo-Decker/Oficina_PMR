@@ -1,0 +1,29 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  data: 
+  20: MyString
+  departamento: 
+  20: MyString
+  nome_projeto: MyString
+  tipo_projeto_string: MyString
+  orientador: MyString
+  maquina: 1
+  ferramentas_proprias: 
+  estado: 
+  material: 
+  desenho_peca: 
+
+two:
+  data: 
+  20: MyString
+  departamento: 
+  20: MyString
+  nome_projeto: MyString
+  tipo_projeto_string: MyString
+  orientador: MyString
+  maquina: 1
+  ferramentas_proprias: 
+  estado: 
+  material: 
+  desenho_peca: 
