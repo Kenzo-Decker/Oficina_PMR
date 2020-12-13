@@ -10,7 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_13_003647) do
+ActiveRecord::Schema.define(version: 2020_12_13_040355) do
+
+  create_table "formulario_certos", force: :cascade do |t|
+    t.integer "data"
+    t.integer "departamento"
+    t.string "nome_projeto"
+    t.string "tipo_projeto_string"
+    t.string "orientador"
+    t.integer "maquina"
+    t.boolean "ferramentas_proprias"
+    t.boolean "estado"
+    t.string "material"
+    t.string "desenho_peca"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "machines", force: :cascade do |t|
     t.string "name"
