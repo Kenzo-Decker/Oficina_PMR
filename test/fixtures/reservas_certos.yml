@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  fields: MyString
+  user_id: MyString
+  formulario_id: 1
+  maquina_id: 1
+  tecnico: false
+  ativa: false
+
+two:
+  fields: MyString
+  user_id: MyString
+  formulario_id: 1
+  maquina_id: 1
+  tecnico: false
+  ativa: false
