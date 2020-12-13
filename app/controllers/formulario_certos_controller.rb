@@ -69,6 +69,6 @@ class FormularioCertosController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def formulario_certo_params
-      params.require(:formulario_certo).permit(:data, :20, :departamento, :20, :nome_projeto, :tipo_projeto_string, :orientador, :maquina, :ferramentas_proprias, :estado, :material, :desenho_peca)
+      params.require(:formulario_certo).permit(:data, :departamento, :nome_projeto, :tipo_projeto_string, :orientador, :maquina, :ferramentas_proprias, :estado, :material, :desenho_peca)
     end
 end
