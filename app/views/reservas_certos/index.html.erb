@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Reservas Certos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Fields</th>
+      <th>User</th>
+      <th>Formulario</th>
+      <th>Maquina</th>
+      <th>Tecnico</th>
+      <th>Ativa</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @reservas_certos.each do |reservas_certo| %>
+      <tr>
+        <td><%= reservas_certo.fields %></td>
+        <td><%= reservas_certo.user_id %></td>
+        <td><%= reservas_certo.formulario_id %></td>
+        <td><%= reservas_certo.maquina_id %></td>
+        <td><%= reservas_certo.tecnico %></td>
+        <td><%= reservas_certo.ativa %></td>
+        <td><%= link_to 'Show', reservas_certo %></td>
+        <td><%= link_to 'Edit', edit_reservas_certo_path(reservas_certo) %></td>
+        <td><%= link_to 'Destroy', reservas_certo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Reservas Certo', new_reservas_certo_path %>
