@@ -20,7 +20,7 @@ class Ability
 
     else 
       can :read, :all
-      can :create, :formulario_certo, :reservas_certo
+      can :create, [FormularioCerto, ReservasCerto]
   end
     #
     # The first argument to `can` is the action you are giving the user
