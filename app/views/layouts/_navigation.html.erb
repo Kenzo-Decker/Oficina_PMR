@@ -4,18 +4,33 @@
     <div class="box">
         <p class='titulo-central'>Título Imponente</p>
         <p class='subtitulo-central'>SUBTÍTULO BOM DEMAIS DA CONTA BEM SUAVE NA VISTA</p>
-        <!-- Botões centrais -->
-        <div class='flex-row bg-white bg-opacity-40 rounded-xl p-4' x-show='signedIn'>
-            <button class='btn mx-3'>
-                <a href='../machines'>Atualizar status das máquinas</a>
-            </button>
-            <button class='btn mx-3'>
-                Agendar horário
-            </button>
-            <button class='btn mx-3'>
-                Meus agendamentos
-            </button>
-        </div>
+        <!-- Botões centrais aluno-->
+        <% if user_signed_in? %>
+            <% puts current_user.role %>
+            <% if current_user.role == 'aluno' %>
+            <div class='flex-row bg-white bg-opacity-40 rounded-xl p-4'>
+                <button class='btn mx-3'>
+                    <a href='/machines'>Agendar horário</a>
+                </button>
+                <button class='btn mx-3'>
+                    <a href='/machines'>Meus agendamentos</a>
+                </button>
+            </div>
+        <!-- Botões centrais admin/professor/técnico-->
+            <% else %>
+            <div class='flex-row bg-white bg-opacity-40 rounded-xl p-4'>
+                <button class='btn mx-3'>
+                    <a href='/machines'>Atualizar status das máquinas</a>
+                </button>
+                <button class='btn mx-3'>
+                    <a href='/machines'>Botao</a>
+                </button>
+                <button class='btn mx-3'>
+                    <a href='/machines'>Ver agendamentos</a>
+                </button>
+            </div>
+            <% end %>
+        <% end %>
     </div>
 
     <nav class="fixed w-full bg-white md:bg-transparent transition ease-linear duration-300" id="nav">
@@ -74,7 +89,7 @@
 
 <script type="text/javascript">
 
-    var logado = document.getElementById('logado-como')       
+    var logado = document.getElementById('logado-como')
     var logo_w = document.getElementById('logo-white')
     var logo_b = document.getElementById('logo-black')
     var nav = document.getElementById('nav');
