@@ -1,17 +1,17 @@
 <div class="flex flex-col bg-home bg-opacity-20 max-h-full z-10" x-data='{ signedIn: <%= user_signed_in? %>}'>
 
     <div class="box">
-        <p class='text-5xl pt-44 pb-5 font-semibold text-white text-shadow'>Título Imponente</p>
-        <p class='text-lg pb-5 font-normal text-gray-300'>SUBTÍTULO BOM DEMAIS DA CONTA BEM SUAVE NA VISTA</p>
-        <div class='flex-row bg-white bg-opacity-40 rounded-xl p-4'>
+        <p class='titulo-central'>Título Imponente</p>
+        <p class='subtitulo-central'>SUBTÍTULO BOM DEMAIS DA CONTA BEM SUAVE NA VISTA</p>
+        <div class='flex-row bg-white bg-opacity-40 rounded-xl p-4' x-show='signedIn'>
             <button class='btn mx-3'>
-                Botão 1
+                Atualizar status das máquinas
             </button>
             <button class='btn mx-3'>
-                Botão 2
+                Agendar horário
             </button>
             <button class='btn mx-3'>
-                Botão 3
+                Meus agendamentos
             </button>
         </div>
     </div>
