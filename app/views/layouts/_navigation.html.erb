@@ -1,6 +1,20 @@
 <div class="flex flex-col bg-home bg-opacity-20 max-h-full z-10" x-data='{ signedIn: <%= user_signed_in? %>}'>
 
-    <div class="box"></div>
+    <div class="box">
+        <p class='text-5xl pt-44 pb-5 font-semibold text-white text-shadow'>Título Imponente</p>
+        <p class='text-lg pb-5 font-normal text-gray-300'>SUBTÍTULO BOM DEMAIS DA CONTA BEM SUAVE NA VISTA</p>
+        <div class='flex-row bg-white bg-opacity-40 rounded-xl p-4'>
+            <button class='btn mx-3'>
+                Botão 1
+            </button>
+            <button class='btn mx-3'>
+                Botão 2
+            </button>
+            <button class='btn mx-3'>
+                Botão 3
+            </button>
+        </div>
+    </div>
 
     <nav class="fixed w-full bg-white md:bg-transparent transition ease-linear duration-300" id="nav">
         <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-20">
@@ -22,7 +36,7 @@
                 <!-- Logado como (email) não mobile -->
                 <p class='text-white font-semibold pr-5' x-show='signedIn' id="logado-como">Logado como <%= current_user.try(:email) %></p>
                 <!-- Botão de login/logout não mobile -->
-                <button class="py-2 px-4 rounded-md shadow-md text-white focus:outline-none transition ease-linear duration-300 bg-amarelo-escuro hover:bg-yellow-500 transform hover:scale-105">
+                <button class="btn">
                     <a href="../users/sign_in" class="font-medium" x-show='!signedIn'>
                         <i class="fas fa-sign-in-alt fa-sm white"></i>
                         Acessar
