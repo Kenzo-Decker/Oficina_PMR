@@ -1,49 +1,74 @@
-<h2>Sign up</h2>
+<%= render "layouts/navbar" %>
 
+<div class=m-48>
+</div>
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+<div class=px-96>
+  <div class="mt-10 sm:mt-0">
+    <div class="md:grid md:grid-cols-3 md:gap-6">
+      <div class="md:col-span-1">
+        <div class="px-4 sm:px-0">
+          <h3 class="text-lg font-medium leading-6 text-gray-900">Crie sua conta</h3>
+          <p class="mt-1 text-sm text-gray-600">
+            Preencha as informações a seguir.
+          </p>
+        </div>
+      </div>
+      <div class="mt-5 md:mt-0 md:col-span-2">
+        <form action="#" method="POST">
+          <div class="shadow overflow-hidden sm:rounded-md">
+            <div class="px-4 py-5 bg-white sm:p-6">
+              <div class="grid grid-cols-6 gap-6">
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
+                <div class="col-span-6 sm:col-span-3">
+                  <label for="first_name" class="block text-sm font-medium text-gray-700">Nome</label>
+                  <%= f.text_field :first_name, autofocus: true, class:'mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md' %>
+                </div>
 
-  <div class="field">
-    <%= f.label :first_name %><br />
-    <%= f.text_field :first_name, autofocus: true %>
-  </div>
+                <div class="col-span-6 sm:col-span-3">
+                  <label for="last_name" class="block text-sm font-medium text-gray-700">Sobrenome</label>
+                  <%= f.text_field :last_name, autofocus: true, class:'mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md' %>
+                </div>
 
-  <div class="field">
-    <%= f.label :last_name %><br />
-    <%= f.text_field :last_name, autofocus: true %>
-  </div>
+                <div class="col-span-6 sm:col-span-3">
+                  <label for="email_address" class="block text-sm font-medium text-gray-700">Número USP</label>
+                  <%= f.text_field :n_usp, autofocus: true, class:'mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md' %>
+                </div>
 
-  <div class="field">
-    <%= f.label :n_usp %><br />
-    <%= f.text_field :n_usp, autofocus: true %>
-  </div>
+                <div class="col-span-6 sm:col-span-3">
+                  <label for="email_address" class="block text-sm font-medium text-gray-700">Telefone</label>
+                  <%= f.telephone_field :telephone, autofocus: true, class:'mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md' %>
+                </div>
 
-  <div class="field">
-    <%= f.label :telephone %><br />
-    <%= f.telephone_field :telephone, autofocus: true %>
-  </div>
+                <div class="col-span-6">
+                  <label for="email_address" class="block text-sm font-medium text-gray-700">Email USP</label>
+                  <%= f.email_field :email, autofocus: true, class:'mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md' %>
+                </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
+                <div class="col-span-6 sm:col-span-3">
+                  <label for="first_name" class="block text-sm font-medium text-gray-700">Senha</label>
+                  <%= f.password_field :password, autocomplete: "new-password", class:'mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md' %>
+                </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+                <div class="col-span-6 sm:col-span-3">
+                  <label for="last_name" class="block text-sm font-medium text-gray-700">Confirme sua senha</label>
+                  <%= f.password_field :password_confirmation, autocomplete: "new-password", class:'mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md' %>
+                </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
+
+              </div>
+            </div>
+            <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
+              <%= f.submit "Criar conta", class:'inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-amarelo hover:bg-amarelo-escuro focus:outline-none' %>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
   </div>
+</div>
 <% end %>
+<div class=m-48>
+</div>
 
-<%= render "devise/shared/links" %>
+<%= render "layouts/footer" %>
