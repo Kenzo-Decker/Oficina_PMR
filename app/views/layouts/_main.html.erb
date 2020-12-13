@@ -1,8 +1,7 @@
 <!-- Icones de status -->
 <div class="w-full bg-cinza py-2 flex flex-col justify-center items-center" x-data='{ open: false }'>
     <!-- Botão de consulta e atualização de status -->
-    <button class="bg-amarelo py-2 px-4 rounded-md mb-4 shadow-md flex flex-row items-center focus:outline-none transition ease-linear
-    duration-300 bg-amarelo-escuro hover:bg-yellow-500 transform hover:scale-105" id="botao-status" @click='open = true'>
+    <button class="btn flex flex-row" id="botao-status" @click='open = true'>
         <i class="hidden branco fas fa-redo-alt fa-lg mr-2"></i>
         <p class="text-white font-semibold">Consultar status</p>
     </button>
@@ -11,41 +10,41 @@
     <div class="w-full flex flex-row flex-wrap md:flex-nowrap items-start px-7" x-show='open'>
         <!-- Ícones dos tornos -->
         <div class="flex-1 px-2 text-center" id="maquina1">
-            <p class="text-white text-base md:text-lg py-2">Torno 1</p>
+            <p class="nomeMaq">Torno 1</p>
             <i class="fas fa-user-clock fa-4x laranja icon-shadow"></i>
-            <p class="text-black text-sm md:text-base py-1"></p>
+            <p class="statusMaq"></p>
         </div>
         <div class="flex-1 px-2 text-center" id="maquina2">
-            <p class="text-white text-base md:text-lg py-2">Torno 2</p>
+            <p class="nomeMaq">Torno 2</p>
             <i class="fas fa-check fa-4x verde icon-shadow"></i>
-            <p class="text-black text-sm md:text-base py-1"></p>
+            <p class="statusMaq"></p>
         </div>
         <div class="flex-1 px-2 text-center" id="maquina3">
-            <p class="text-white text-base md:text-lg py-2">Torno 3</p>
+            <p class="nomeMaq">Torno 3</p>
             <i class="fas fa-check fa-4x verde icon-shadow"></i>
-            <p class="text-black text-sm md:text-base py-1"></p>
+            <p class="statusMaq"></p>
         </div>
         <div class="flex-1 px-2 text-center" id="maquina4">
-            <p class="text-white text-base md:text-lg py-2">Torno 4</p>
+            <p class="nomeMaq">Torno 4</p>
             <i class="fas fa-check fa-4x verde icon-shadow"></i>
-            <p class="text-black text-sm md:text-base py-1"></p>
+            <p class="statusMaq"></p>
         </div>
         <div class="divider"></div>
         <!-- Ícones das fresas -->
         <div class="flex-1 px-2 text-center" id="maquina5">
-            <p class="text-white text-base md:text-lg py-2">Fresa 1</p>
+            <p class="nomeMaq">Fresa 1</p>
             <i class="fas fa-check fa-4x verde icon-shadow"></i>
-            <p class="text-black text-sm md:text-base py-1"></p>
+            <p class="statusMaq"></p>
         </div>
         <div class="flex-1 px-2 text-center" id="maquina6">
-            <p class="text-white text-base md:text-lg py-2">Fresa 2</p>
+            <p class="nomeMaq">Fresa 2</p>
             <i class="fas fa-check fa-4x verde icon-shadow"></i>
-            <p class="text-black text-sm md:text-base py-1"></p>
+            <p class="statusMaq"></p>
         </div>
         <div class="flex-1 px-2 text-center" id="maquina7">
-            <p class="text-white text-base md:text-lg py-2">Fresa 3</p>
+            <p class="nomeMaq">Fresa 3</p>
             <i class="fas fa-check fa-4x verde icon-shadow"></i>
-            <p class="text-black text-sm md:text-base py-1"></p>
+            <p class="statusMaq"></p>
         </div>
     </div>
 </div>

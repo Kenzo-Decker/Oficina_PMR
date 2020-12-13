@@ -1,6 +1,20 @@
-<div class="flex flex-col bg-home bg-opacity-20 max-h-full z-10">
+<div class="flex flex-col bg-home bg-opacity-20 max-h-full z-10" x-data='{ signedIn: <%= user_signed_in? %>}'>
 
-    <div class="box"></div>
+    <div class="box">
+        <p class='text-5xl pt-44 pb-5 font-semibold text-white text-shadow'>Título Imponente</p>
+        <p class='text-lg pb-5 font-normal text-gray-300'>SUBTÍTULO BOM DEMAIS DA CONTA BEM SUAVE NA VISTA</p>
+        <div class='flex-row bg-white bg-opacity-40 rounded-xl p-4'>
+            <button class='btn mx-3'>
+                Botão 1
+            </button>
+            <button class='btn mx-3'>
+                Botão 2
+            </button>
+            <button class='btn mx-3'>
+                Botão 3
+            </button>
+        </div>
+    </div>
 
     <nav class="fixed w-full bg-white md:bg-transparent transition ease-linear duration-300" id="nav">
         <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-20">
@@ -17,15 +31,17 @@
             </div>
             </div>
             <div class="hidden md:block">
-                <!-- Botão de login não mobile -->
-            <div class="ml-4 flex flex-row items-center md:ml-6 transition ease-linear duration-300" x-data='{ signedIn: <%= user_signed_in? %>}'>
-                    <p class='text-white font-semibold pr-5' x-show='signedIn' id="logado-como">Logado como <%= current_user.try(:email) %></p>
-                <button class="py-2 px-4 rounded-md shadow-md text-white focus:outline-none transition ease-linear duration-300 bg-amarelo-escuro hover:bg-yellow-500 transform hover:scale-105">
-                    <a href="../users/sign_in" class="font-medium" id="botao-login" x-show='!signedIn'>
+
+            <div class="ml-4 flex flex-row items-center md:ml-6 transition ease-linear duration-300">
+                <!-- Logado como (email) não mobile -->
+                <p class='text-white font-semibold pr-5' x-show='signedIn' id="logado-como">Logado como <%= current_user.try(:email) %></p>
+                <!-- Botão de login/logout não mobile -->
+                <button class="btn">
+                    <a href="../users/sign_in" class="font-medium" x-show='!signedIn'>
                         <i class="fas fa-sign-in-alt fa-sm white"></i>
                         Acessar
                     </a>
-                    <div class="" id="botao-logout" x-show='signedIn'>
+                    <div x-show='signedIn'>
                         <i class="fas fa-sign-out-alt fa-sm white"></i>
                         <%= link_to "Sair", destroy_user_session_path, method: :delete %>
                     </div>
@@ -36,13 +52,19 @@
         </div>
     </nav>
 
-    <div class="fixed my-16 w-full bg-yellow-500 flex items-center md:hidden shadow-md transition ease-linear duration-500">
-        <!-- Botão de login mobile -->
-        <button class="flex-grow py-0.5 px-8 rounded-md text-white focus:outline-none">
-            <a href="../users/sign_in" class="object-cover font-medium">
+    <div class="fixed my-16 w-full bg-yellow-500 flex flex-row items-center justify-between md:hidden shadow-md transition ease-linear duration-500">
+        <!-- Logado como (email) mobile -->
+        <p class='float-left text-white pl-4' x-show='signedIn'>Logado como <%= current_user.try(:email) %></p>
+        <!-- Botão de login/logout mobile -->
+        <button class="flex-grow font-medium py-0.5 px-8 rounded-md text-white focus:outline-none mx-auto">
+            <a href="../users/sign_in" x-show='!signedIn'>
                 <i class="fas fa-sign-in-alt fa-sm white"></i>
                 Acessar
             </a>
+            <div class='float-right' x-show='signedIn'>
+                <i class="fas fa-sign-out-alt fa-sm white"></i>
+                <%= link_to "Sair", destroy_user_session_path, method: :delete %>
+            </div>
         </button>
     </div>
 
@@ -80,7 +102,6 @@
     var logo_b = document.getElementById('logo-black')
     var nav = document.getElementById('nav');
     var sticky = nav.offsetTop;
-    var width = window.innerWidth;
 
     window.onscroll = function(){
         if (window.pageYOffset > sticky) {
