@@ -46,7 +46,7 @@
 }
 
 .laranja {
-    color: rgb(212, 144, 16);
+    color: var(--amarelo);
 }
 
 .vermelho {
