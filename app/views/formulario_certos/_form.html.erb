@@ -1,67 +1,96 @@
+<%= render "layouts/navbar" %>
 <%= form_with(model: formulario_certo, local: true) do |form| %>
-  <% if formulario_certo.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(formulario_certo.errors.count, "error") %> prohibited this formulario_certo from being saved:</h2>
+<div class='m-12 px-60'>
+  <div>
+    <div class="mt-10 sm:mt-0">
+      <div class="md:grid md:grid-cols-3 md:gap-6">
+        <div class="md:col-span-1">
+          <div class="px-4 sm:px-0">
+            <h3 class="text-lg font-medium leading-6 text-gray-900">Formulário de requerimento</h3>
+            <p class="mt-1 text-sm text-gray-600">
+              Preencha as informações a seguir para que seu pedido seja encaminhado para análise.
+            </p>
+          </div>
+        </div>
+        <div class="mt-5 md:mt-0 md:col-span-2">
+          <form action="#" method="POST">
+            <div class="shadow overflow-hidden sm:rounded-md p-4">
+              <div class="py-5 bg-white">      
+                  <label class="block text-sm font-medium text-gray-700">
+                    Desenho da peça
+                  </label>
+                  <div class="mt-2 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
+                    <div class="space-y-1 text-center">
+                      <svg class="mx-auto h-12 w-12 text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true">
+                        <path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                      <div class="flex text-sm text-gray-600">
+                        <label for="file-upload" class="relative cursor-pointer bg-white rounded-md font-medium text-amarelo hover:text-amarelo-escuro">
+                          <%= form.file_field :desenho_peca %>
 
-      <ul>
-        <% formulario_certo.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="grid grid-cols-6 gap-6">
+                  <div class="col-span-6 sm:col-span-3">
+                    <label for="first_name" class="block text-sm font-medium text-gray-700">Departamento</label>
+                    <%= form.text_field :departamento, class:'mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md' %>
+                  </div>
+
+                  <div class="col-span-6 sm:col-span-3">
+                    <label for="last_name" class="block text-sm font-medium text-gray-700">Data</label>
+                    <%= form.text_field :data, class:'mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md' %>
+                  </div>
+
+                  <div class="col-span-6">
+                    <label for="street_address" class="block text-sm font-medium text-gray-700">Nome do projeto</label>
+                    <%= form.text_field :nome_projeto, class:'mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md' %>
+                  </div>
+
+                  <div class="col-span-6">
+                    <label for="street_address" class="block text-sm font-medium text-gray-700">Tipo de projeto</label>
+                    <%= form.text_field :tipo_projeto_string, class:'mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md' %>
+                  </div>
+
+                  <div class="col-span-6">
+                    <label for="street_address" class="block text-sm font-medium text-gray-700">Orientador</label>
+                    <%= form.text_field :orientador, class:'mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md' %>
+                  </div>
+
+                  <div class="col-span-2">
+                    <label for="street_address" class="block text-sm font-medium text-gray-700">Máquina</label>
+                    <%= form.number_field :maquina, class:'mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md' %>
+                  </div>
+
+                  <div class="col-span-2">
+                    <label for="street_address" class="block text-sm font-medium text-gray-700">Ferramentas próprias</label>
+                    <%= form.text_field :ferramentas_proprias, class:'mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md' %>
+                  </div>
+
+                  <div class="col-span-2">
+                    <label for="street_address" class="block text-sm font-medium text-gray-700">Material</label>
+                    <%= form.text_field :material, class:'mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md' %>
+                  </div>
+                </div>
+              </div>
+              <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
+                <%= form.submit "Enviar", class:'inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-amarelo hover:bg-amarelo-escuro' %>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :data %>
-    <%= form.text_field :data %>
   </div>
+</div>
 
-  <div class="field">
-    <%= form.label :departamento %>
-    <%= form.text_field :departamento %>
-  </div>
-
-  <div class="field">
-    <%= form.label :nome_projeto %>
-    <%= form.text_field :nome_projeto %>
-  </div>
-
-  <div class="field">
-    <%= form.label :tipo_projeto_string %>
-    <%= form.text_field :tipo_projeto_string %>
-  </div>
-
-  <div class="field">
-    <%= form.label :orientador %>
-    <%= form.text_field :orientador %>
-  </div>
-
-  <div class="field">
-    <%= form.label :maquina %>
-    <%= form.number_field :maquina %>
-  </div>
-
-  <div class="field">
-    <%= form.label :ferramentas_proprias %>
-    <%= form.text_field :ferramentas_proprias %>
-  </div>
-
+<!--
   <div class="field">
     <%= form.label :estado %>
     <%= form.text_field :estado %>
   </div>
-
-  <div class="field">
-    <%= form.label :material %>
-    <%= form.text_field :material %>
-  </div>
-
-  <div class="field">
-    <%= form.label :desenho_peca %>
-    <%= form.file_field :desenho_peca %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+-->
 <% end %>
+<%= render "layouts/footer" %>
