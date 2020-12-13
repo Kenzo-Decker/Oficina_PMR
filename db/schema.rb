@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_13_040355) do
+ActiveRecord::Schema.define(version: 2020_12_13_141556) do
 
   create_table "formulario_certos", force: :cascade do |t|
     t.integer "data"
@@ -30,6 +30,17 @@ ActiveRecord::Schema.define(version: 2020_12_13_040355) do
   create_table "machines", force: :cascade do |t|
     t.string "name"
     t.string "state"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "reservas_certos", force: :cascade do |t|
+    t.string "fields"
+    t.string "user_id"
+    t.integer "formulario_id"
+    t.integer "maquina_id"
+    t.boolean "tecnico"
+    t.boolean "ativa"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
