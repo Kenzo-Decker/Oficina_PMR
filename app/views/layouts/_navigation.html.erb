@@ -8,8 +8,8 @@
         <% if user_signed_in? %>
             <% puts current_user.role %>
             <% if current_user.role == 'aluno' %>
-            <div class='flex-row bg-white bg-opacity-40 rounded-xl p-4'>
-                <button class='btn mx-3'>
+            <div class='botoes-centrais'>
+                <button class='btn mx-3 mb-3 sm:mb-0'>
                     <a href='/machines'>Agendar horário</a>
                 </button>
                 <button class='btn mx-3'>
@@ -18,11 +18,11 @@
             </div>
         <!-- Botões centrais admin/professor/técnico-->
             <% else %>
-            <div class='flex-row bg-white bg-opacity-40 rounded-xl p-4'>
-                <button class='btn mx-3'>
+            <div class='botoes-centrais'>
+                <button class='btn mx-3 mb-3 sm:mb-0'>
                     <a href='/machines'>Atualizar status das máquinas</a>
                 </button>
-                <button class='btn mx-3'>
+                <button class='btn mx-3 mb-3 sm:mb-0'>
                     <a href='/machines'>Botao</a>
                 </button>
                 <button class='btn mx-3'>

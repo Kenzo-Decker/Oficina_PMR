@@ -15,10 +15,13 @@
         @apply py-2 px-4 rounded-md shadow-md text-white focus:outline-none transition ease-linear duration-300 bg-amarelo-escuro hover:bg-yellow-500 transform hover:scale-105;
     }
     .titulo-central {
-        @apply text-5xl pt-52 pb-5 font-semibold text-white text-shadow;
+        @apply text-5xl pt-52 pb-5 font-semibold text-white text-shadow text-center;
     }
     .subtitulo-central {
-        @apply text-lg pb-5 font-normal text-gray-300;
+        @apply text-lg pb-5 font-normal text-gray-300 text-center;
+    }
+    .botoes-centrais {
+        @apply flex flex-col items-stretch sm:flex-row bg-white bg-opacity-40 rounded-xl p-4 my-16;
     }
     .nomeMaq {
         @apply text-white text-base md:text-lg py-2;
@@ -109,6 +112,7 @@
 .box {
     width: 100%;
     height: 70vh;
+    padding: 0px 20px;
     background-color: transparent;
     display: flex;
     flex-direction: column;
