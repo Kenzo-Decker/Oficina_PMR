@@ -14,6 +14,10 @@ class Ability
       can :read, :all
       can :update, :all
 
+    elsif user.role == "tecnico"
+      can :read, :all
+      can :update, :all
+
     else 
       can :read, :all
       #can :create, forms(inserir nome de formulario)
