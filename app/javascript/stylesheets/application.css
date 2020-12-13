@@ -24,6 +24,10 @@
     background-color: var(--amarelo);
 }
 
+.bg-amarelo-claro{
+    background-color: rgb(255,166,0);
+}
+
 .bg-azul {
     background-color: var(--azul-normal);
 }
@@ -42,6 +46,10 @@
 
 .laranja {
     color: rgb(212, 144, 16);
+}
+
+.laranja-escuro {
+    color: rgb(255,166,0)
 }
 
 .vermelho {
