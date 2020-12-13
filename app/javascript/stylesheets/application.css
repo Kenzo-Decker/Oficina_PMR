@@ -27,7 +27,7 @@
         @apply text-black text-sm md:text-base py-1;
     }
     .titulo {
-        @apply text-4xl font-semibold text-white text-shadow p-5;
+        @apply text-4xl font-semibold azul-escuro p-5;
     }
 }
 
@@ -132,8 +132,11 @@
     border-color: var(--azul-escuro);
 }
 
-
-
+table th, table td {
+    border-bottom-width: 2px;
+    border-color: var(--amarelo);
+    padding-top: 6px;
+}
 
 
 pre {

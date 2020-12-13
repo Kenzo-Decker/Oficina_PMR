@@ -1,6 +1,13 @@
-<h1>Editing Machine</h1>
+<%= render "layouts/navbar" %>
 
-<%= render 'form', machine: @machine %>
+<div class='flex flex-col w-full justify-center items-center bg-gray-200 py-20'>
+    <div>
+        <p class='titulo'>Editar Máquina</p>
+    </div>
+    <div>
+        <%= render 'form', machine: @machine %>
+    </div>
+</div> 
 
-<%= link_to 'Show', @machine %> |
-<%= link_to 'Back', machines_path %>
+<%= render "layouts/footer" %>
+
