@@ -35,6 +35,15 @@
     .tabela {
         @apply w-auto justify-between text-center border-2 border-yellow-500 bg-gray-100;
     }
+    .titulo-footer {
+        @apply text-white text-base md:text-lg py-2;
+    }
+    .texto-footer {
+        @apply text-black text-sm md:text-base py-1;
+    }
+    .link-footer {
+        @apply transition ease-linear duration-200 hover:text-gray-300;
+    }
 }
 
 .text-amarelo{
