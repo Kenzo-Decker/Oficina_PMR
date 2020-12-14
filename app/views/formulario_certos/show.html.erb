@@ -1,57 +1,69 @@
-<p id="notice"><%= notice %></p>
+<%= render "layouts/navbar" %>
 
-<p>
-  <strong>Data:</strong>
-  <%= @formulario_certo.data %>
-</p>
+<div class='flex flex-col w-full justify-center items-center bg-gray-200 py-40'>
+    <p id="notice" class='py-5'><%= notice %></p>
 
+    <div class='flex flex-col justify-between'>
 
+      <p class='titulo'>Detalhes do agendamento</p>
 
-<p>
-  <strong>Departamento:</strong>
-  <%= @formulario_certo.departamento %>
-</p>
+      <p class='pb-3'>
+        <strong>Data:</strong>
+        <%= @formulario_certo.data %>
+      </p>
+      
+      <p class='pb-3'>
+        <strong>Departamento:</strong>
+        <%= @formulario_certo.departamento %>
+      </p>
+      
+      
+      <p class='pb-3'>
+        <strong>Nome projeto:</strong>
+        <%= @formulario_certo.nome_projeto %>
+      </p>
+      
+      <p class='pb-3'>
+        <strong>Tipo projeto string:</strong>
+        <%= @formulario_certo.tipo_projeto_string %>
+      </p>
+      
+      <p class='pb-3'>
+        <strong>Orientador:</strong>
+        <%= @formulario_certo.orientador %>
+      </p>
+      
+      <p class='pb-3'>
+        <strong>Maquina:</strong>
+        <%= @formulario_certo.maquina %>
+      </p>
+      
+      <p class='pb-3'>
+        <strong>Ferramentas proprias:</strong>
+        <%= @formulario_certo.ferramentas_proprias %>
+      </p>
+      
+      <p class='pb-3'>
+        <strong>Estado:</strong>
+        <%= @formulario_certo.estado %> 
+      </p>
+      
+      <p class='pb-3'>
+        <strong>Material:</strong>
+        <%= @formulario_certo.material %>
+      </p>
+      
+      <p class='pb-3'>
+        <strong>Desenho peca:</strong>
+        <%= @formulario_certo.desenho_peca %>
+      </p>
+  
+      <div class='flex flex-row justify-between pt-4 px-2'>
+        <button class='btn'><%= link_to 'Ok', formulario_certos_path %></button>
+        <button class='btn'><%= link_to 'Editar', edit_formulario_certo_path(@formulario_certo) %></button>
+      </div>
+    </div>
+    
+</div> 
 
-
-<p>
-  <strong>Nome projeto:</strong>
-  <%= @formulario_certo.nome_projeto %>
-</p>
-
-<p>
-  <strong>Tipo projeto string:</strong>
-  <%= @formulario_certo.tipo_projeto_string %>
-</p>
-
-<p>
-  <strong>Orientador:</strong>
-  <%= @formulario_certo.orientador %>
-</p>
-
-<p>
-  <strong>Maquina:</strong>
-  <%= @formulario_certo.maquina %>
-</p>
-
-<p>
-  <strong>Ferramentas proprias:</strong>
-  <%= @formulario_certo.ferramentas_proprias %>
-</p>
-
-<p>
-  <strong>Estado:</strong>
-  <%= @formulario_certo.estado %>
-</p>
-
-<p>
-  <strong>Material:</strong>
-  <%= @formulario_certo.material %>
-</p>
-
-<p>
-  <strong>Desenho peca:</strong>
-  <%= @formulario_certo.desenho_peca %>
-</p>
-
-<%= link_to 'Edit', edit_formulario_certo_path(@formulario_certo) %> |
-<%= link_to 'Back', formulario_certos_path %>
+<%= render "layouts/footer" %>
