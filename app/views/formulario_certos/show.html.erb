@@ -19,12 +19,12 @@
       
       
       <p class='pb-3'>
-        <strong>Nome projeto:</strong>
+        <strong>Nome do projeto:</strong>
         <%= @formulario_certo.nome_projeto %>
       </p>
       
       <p class='pb-3'>
-        <strong>Tipo projeto string:</strong>
+        <strong>Tipo de projeto:</strong>
         <%= @formulario_certo.tipo_projeto_string %>
       </p>
       
@@ -34,18 +34,26 @@
       </p>
       
       <p class='pb-3'>
-        <strong>Maquina:</strong>
+        <strong>Máquina:</strong>
         <%= @formulario_certo.maquina %>
       </p>
       
       <p class='pb-3'>
-        <strong>Ferramentas proprias:</strong>
-        <%= @formulario_certo.ferramentas_proprias %>
+        <strong>Ferramentas próprias:</strong>
+        <% if @formulario_certo.ferramentas_proprias == true %>
+        Sim
+        <% else %>
+        Não
+        <% end %>
       </p>
       
       <p class='pb-3'>
         <strong>Estado:</strong>
-        <%= @formulario_certo.estado %> 
+        <% if @formulario_certo.estado %>
+        <%= @formulario_certo.estado %>
+        <% else %>
+        Aguardando deferimento
+        <% end %>
       </p>
       
       <p class='pb-3'>

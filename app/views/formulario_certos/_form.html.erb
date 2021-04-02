@@ -1,8 +1,8 @@
 <%= render "layouts/navbar" %>
 
 <%= form_with(model: formulario_certo, local: true) do |form| %>
-<div class='m-12 px-60 max-w-screen-xl mx-auto'>
-  <div class='mb-16'>
+<div class=' max-w-screen-xl mx-auto px-16'>
+  <div class='mb-16 mt-16'>
   <a href="/" class='btn'>Voltar</a>
 </div>
     <div class="mt-10 sm:mt-0">
@@ -48,32 +48,32 @@
                     <%= form.text_field :data, class:'mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md' %>
                   </div>
 
-                  <div class="col-span-6">
+                  <div class="col-span-6 sm:col-span-3">
                     <label for="street_address" class="block text-sm font-medium text-gray-700">Nome do projeto</label>
                     <%= form.text_field :nome_projeto, class:'mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md' %>
                   </div>
 
-                  <div class="col-span-6">
+                  <div class="col-span-6 sm:col-span-3">
                     <label for="street_address" class="block text-sm font-medium text-gray-700">Tipo de projeto</label>
                     <%= form.text_field :tipo_projeto_string, class:'mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md' %>
                   </div>
 
-                  <div class="col-span-6">
+                  <div class="col-span-6 sm:col-span-6">
                     <label for="street_address" class="block text-sm font-medium text-gray-700">Orientador</label>
                     <%= form.text_field :orientador, class:'mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md' %>
                   </div>
 
-                  <div class="col-span-2">
+                  <div class="col-span-6 sm:col-span-2">
                     <label for="street_address" class="block text-sm font-medium text-gray-700">Máquina</label>
                     <%= form.number_field :maquina, class:'mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md' %>
                   </div>
 
-                  <div class="col-span-2">
+                  <div class="col-span-6 sm:col-span-2">
                     <label for="street_address" class="block text-sm font-medium text-gray-700">Ferramentas próprias</label>
                     <%= form.text_field :ferramentas_proprias, class:'mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md' %>
                   </div>
 
-                  <div class="col-span-2">
+                  <div class="col-span-6 sm:col-span-2">
                     <label for="street_address" class="block text-sm font-medium text-gray-700">Material</label>
                     <%= form.text_field :material, class:'mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md' %>
                   </div>

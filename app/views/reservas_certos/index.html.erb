@@ -1,37 +1,53 @@
-<p id="notice"><%= notice %></p>
+<%= render "layouts/navbar" %>
 
-<h1>Reservas Certos</h1>
+<div class='w-full bg-gray-200 py-20 flex flex-col justify-center items-center overflow-x-auto'>
+  <div class='max-w-xl flex flex-col justify-center items-center'>
+      <div>
+          <p class='titulo'>Agendamentos</p>
+      </div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Fields</th>
-      <th>User</th>
-      <th>Formulario</th>
-      <th>Maquina</th>
-      <th>Tecnico</th>
-      <th>Ativa</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+      <table class='tabela'>
+        <thead>
+          <tr>
+            <th class='px-3'>Data</th>
+            <th class='px-3'>Projeto</th>
+            <th class='px-3'>Maquina</th>
+            <th class='px-3'>Estado</th>
+            <% if current_user.role != 'aluno' %>
+            <th colspan="3"></th>
+            <% else %>
+            <th colspan="1"></th>
+            <% end %>
+          </tr>
+        </thead>
+      
+        <tbody>
+          <% @formulario_certos.each do |formulario_certo| %>
+            <tr>
+              <td><%= formulario_certo.data %></td>
+              <td><%= formulario_certo.nome_projeto %></td>
+              <td><%= formulario_certo.maquina %></td>
+              <% if formulario_certo.estado %>
+              <td><%= formulario_certo.estado %></td>
+              <% else %>
+              <td>Aguardando deferimento</td>
+              <% end %>
+              <td><button class='btn'><%= link_to 'Detalhes', formulario_certo %></button></td>
+              <% if current_user.role != 'aluno' %>
+              <td><button class='btn'><%= link_to 'Editar', edit_formulario_certo_path(formulario_certo) %></button></td>
+              <td><button class='btn'><%= link_to 'Apagar', formulario_certo, method: :delete, data: { confirm: 'Você tem certeza?' } %></button></td>
+              <% end %>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+      
+    <div class='pt-5'>
+        <button class='btn'>
+            <a href="/">Voltar</a>
+        </button>
+    </div>
+  </div>
+</div>
 
-  <tbody>
-    <% @reservas_certos.each do |reservas_certo| %>
-      <tr>
-        <td><%= reservas_certo.fields %></td>
-        <td><%= reservas_certo.user_id %></td>
-        <td><%= reservas_certo.formulario_id %></td>
-        <td><%= reservas_certo.maquina_id %></td>
-        <td><%= reservas_certo.tecnico %></td>
-        <td><%= reservas_certo.ativa %></td>
-        <td><%= link_to 'Show', reservas_certo %></td>
-        <td><%= link_to 'Edit', edit_reservas_certo_path(reservas_certo) %></td>
-        <td><%= link_to 'Destroy', reservas_certo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Reservas Certo', new_reservas_certo_path %>
+<%= render "layouts/footer" %>
